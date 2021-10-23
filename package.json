@@ -13,7 +13,7 @@
     "start": "tsc -w",
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
-    "test": "jest test"
+    "test": "jest --env=./test/custom-test-env.cjs test"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
