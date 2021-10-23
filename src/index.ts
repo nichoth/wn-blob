@@ -1,3 +1,3 @@
-export default function wnBlob (arg:string): string {
+export default function wnBlob (wn, arg:string): string {
     return arg
 }
