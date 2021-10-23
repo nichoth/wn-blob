@@ -1,7 +1,7 @@
-// import { example } from '../src'
+import wnBlob from '../src'
 
 describe('example', () => {
   it('should do something', () => {
-    expect(true).toEqual(true)
+    expect(wnBlob('test')).toEqual('test')
   })
 })
