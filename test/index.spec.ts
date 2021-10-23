@@ -11,7 +11,7 @@ const blob = new Blob([arraybuffer as BlobPart], {
 
 var file = new File([blob], "caracal.jpg", { type: 'image/jpeg' });
 
-console.log('file', file)
+console.log('file.name', file.name)
 
 describe('example', () => {
     it('should do something', () => {
