@@ -9,9 +9,5 @@ module.exports = {
     'js',
     'ts',
     'json'
-  ],
-  transform: {
-    '^.+\\.ts$': 'ts-jest',
-    '^.+\\.js$': 'babel-jest'
-  }
+  ]
 };

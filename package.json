@@ -1,15 +1,34 @@
 {
-  "name": "typescript",
+  "name": "@nichoth/wn-blob",
+  "description": "Save blobs to webnative",
+  "directories": {
+    "test": "test"
+  },
   "version": "0.0.0",
+  "main": "dist/index.js",
+  "browser": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "scripts": {
-    "start": "vite",
-    "build": "tsc && vite build",
-    "serve": "vite preview",
+    "start": "tsc -w",
+    "prebuild": "rm -rf dist/*",
+    "build": "tsc",
     "test": "jest test"
   },
   "devDependencies": {
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.11.4",
     "jest": "^27.3.1",
     "typescript": "^4.3.2",
-    "vite": "^2.6.4"
-  }
+    "webnative": "^0.28.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nichoth/wn-blob.git"
+  },
+  "author": "Nick Thomas <nichoth@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nichoth/wn-blob/issues"
+  },
+  "homepage": "https://github.com/nichoth/wn-blob#readme"
 }

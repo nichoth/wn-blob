@@ -1,4 +1,4 @@
-# typescript
+# wn blob
 
-A template for typescript projects
+Save blobs to webnative
 
