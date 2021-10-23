@@ -4,6 +4,7 @@
   "directories": {
     "test": "test"
   },
+  "type": "module",
   "version": "0.0.0",
   "main": "dist/index.js",
   "browser": "dist/index.js",
@@ -15,6 +16,7 @@
     "test": "jest test"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-typescript": "^7.15.0",
     "@types/jest": "^27.0.2",
