@@ -1,4 +1,4 @@
-import wnBlob from '../src'
+import wnBlob from '../dist'
 import fs from 'fs'
 import * as wn from 'webnative'
 var test = require('tape')

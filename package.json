@@ -13,7 +13,7 @@
     "start": "tsc -w",
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
-    "test": "browserify -p esmify -p [ tsify --noImplicitAny ] test/index.ts | tape-run | tap-spec"
+    "test": "browserify -p esmify test/index.js | tape-run | tap-spec"
   },
   "devDependencies": {
     "browserify": "^17.0.0",
