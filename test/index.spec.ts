@@ -21,8 +21,8 @@ import * as wn from 'webnative'
 
 
 
-import Blob from 'fetch-blob'
-import File from 'fetch-blob/file.js'
+// import Blob from 'fetch-blob'
+// import File from 'fetch-blob/file.js'
 
 
 
