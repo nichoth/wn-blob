@@ -4,7 +4,11 @@
     "declaration": true,
     "outDir": "dist",
     "declarationDir": "dist",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "typeRoots": [
+      "../node_modules/@types"
+    ]
   },
   "include": [
     "src/index.ts"
