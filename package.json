@@ -13,7 +13,8 @@
     "start": "tsc -w",
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
-    "test": "jest --env=./test/custom-test-env.cjs test"
+    "test": "jest --env=./test/custom-test-env.cjs test",
+    "test-b": "concurrently --kill-others \"ecstatic test/public\" \"jest\""
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -25,6 +26,7 @@
     "@types/node": "^16.11.4",
     "@types/puppeteer": "^5.4.4",
     "babel-jest": "^27.3.1",
+    "concurrently": "^6.3.0",
     "fetch-blob": "^3.1.2",
     "jest": "^27.3.1",
     "jest-environment-jsdom": "^27.3.1",
