@@ -2,9 +2,36 @@ import wnBlob from '../src'
 import fs from 'fs'
 import * as wn from 'webnative'
 
+
+
+
+// import 'expect-puppeteer'
+
+// describe('Google', () => {
+//   beforeAll(async () => {
+//     await page.goto('https://google.com')
+//   })
+
+//   it('should display "google" text on page', async () => {
+//     await expect(page).toMatch('google')
+//   })
+// })
+
+
+
+
+
+import Blob from 'fetch-blob'
+import File from 'fetch-blob/file.js'
+
+
+
 // this is a node buffer
 var buf = fs.readFileSync(__dirname + '/caracal.jpg')
 let arraybuffer = Uint8Array.from(buf).buffer;
+
+// console.log('window', window)
+// page.evaluate((x, y) => console.log(x, y), 10, 11)
 
 const blob = new Blob([arraybuffer as BlobPart], {
     type: 'image/jpeg',
