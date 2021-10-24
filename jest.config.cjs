@@ -7,7 +7,7 @@ module.exports = {
   transform: {
     "\\.ts$": ['ts-jest']
   },
-  transformIgnorePatterns: ['node_modules/(?!(webnative|keystore-idb)/)'],
+  transformIgnorePatterns: ['node_modules/(?!(webnative|keystore-idb|fetch-blob)/)'],
   transform: {
     '^.+\\.(js|jsx|ts|tsx|mjs)$': 'babel-jest',
   },
