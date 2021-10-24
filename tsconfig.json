@@ -1,12 +1,25 @@
 {
   "compilerOptions": {
+    "lib": ["dom", "es2021"],
+    "moduleResolution": "node",
+    "target": "ES2018",
     "esModuleInterop": true,
     "declaration": true,
     "outDir": "dist",
     "declarationDir": "dist",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "sourceMap": true,
+    "module":"ESNext",
   },
   "include": [
     "src/index.ts"
   ],
+  "exclude": [
+    "tests/**/*"
+  ]
 }
