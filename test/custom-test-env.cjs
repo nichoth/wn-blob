@@ -16,4 +16,3 @@ module.exports = class CustomTestEnvironment extends Environment {
         }
     }
 }
-

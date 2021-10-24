@@ -24,6 +24,12 @@ const PERMISSIONS = {
     },
 };
 
+// describe('example', () => {
+//     it('should do something', () => {
+//         expect(true).toEqual(true)
+//     })
+// })
+
 wn.initialise({ permissions: PERMISSIONS })
     .then(_wn => {
         describe('example', () => {
