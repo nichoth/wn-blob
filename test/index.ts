@@ -1,6 +1,6 @@
 import wnBlob from '../src'
 import fs from 'fs'
-import * as wn from 'webnative/lib'
+import * as wn from 'webnative'
 var test = require('tape')
 
 const PERMISSIONS = {
