@@ -38,4 +38,3 @@ wn.initialise({ permissions: PERMISSIONS })
             })
         })
     })
-

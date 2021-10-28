@@ -8,6 +8,7 @@ module.exports = {
     '^.+\\.(js|jsx|ts|tsx|mjs)$': 'babel-jest',
   },
   testEnvironment: 'jsdom',
+  // setupFiles: ["./test/setup.js"],
   moduleFileExtensions: [
     'js',
     'ts',
