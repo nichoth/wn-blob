@@ -13,13 +13,14 @@
     "start": "tsc -w",
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
-    "test": "browserify -d -p esmify test/index.js | tape-run | tap-spec"
+    "test": "browserify -d -p esmify test/index.js | tape-run --render=\"tap-spec\""
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/plugin-proposal-export-namespace-from": "^7.14.5",
     "@babel/preset-env": "^7.15.8",
     "babelify": "^10.0.0",
+    "browser-run": "^10.1.0",
     "browserify": "^17.0.0",
     "esmify": "^2.1.1",
     "localforage": "^1.10.0",
