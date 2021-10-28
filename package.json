@@ -13,7 +13,7 @@
     "start": "tsc -w",
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
-    "test": "browserify -d -t [ babelify --global=true --presets [ @babel/preset-env ] --plugins [ @babel/plugin-proposal-export-namespace-from ] --global ] -p esmify test/index.js | tape-run | tap-spec"
+    "test": "browserify -d -p esmify test/index.js | tape-run | tap-spec"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
