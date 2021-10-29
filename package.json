@@ -13,7 +13,7 @@
     "start": "tsc -w",
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
-    "test": "browserify -t [ babelify --global --presets [ @babel/preset-env ] --plugins [ @babel/plugin-proposal-export-namespace-from ] ] -d -p esmify test/index.js | tape-run --render=\"tap-spec\""
+    "test": "browserify -d -p esmify test/index.js | tape-run --render=\"tap-spec\""
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -22,7 +22,7 @@
     "babelify": "^10.0.0",
     "browser-run": "^10.1.0",
     "browserify": "^17.0.0",
-    "esmify": "^2.1.1",
+    "esmify": "github:nichoth/esmify",
     "localforage": "^1.10.0",
     "tap-spec": "^5.0.0",
     "tape": "^5.3.1",
