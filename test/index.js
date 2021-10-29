@@ -18,7 +18,7 @@ const PERMISSIONS = {
         creator: "nichoth",
     },
     fs: {
-        public: [webnative.path.directory("Apps", "Fission", "test")],
+        public: [ webnative.path.directory("test") ],
     }
 };
 
@@ -37,17 +37,34 @@ test('setup', t => {
     file = new File([blob], "ok.jpg", { type: 'image/jpeg' });
 
     webnative.initialise({ permissions: PERMISSIONS })
-        .then(_wn => {
-            console.log('______wnn', _wn)
-            wn = _wn
+        .then(state => {
+            console.log('state', state)
+            if (state.scenario === webnative.Scenario.NotAuthorised) {
+                console.log('**redirecting**')
+                webnative.redirectToLobby(state.permissions)
+                    .then(res => {
+                        console.log('**res**', res)
+                        t.end()
+                    })
+                    .catch(err => {
+                        console.log('**err**', err)
+                        t.end()
+                    })
+            } else {
+                console.log('**else**', webnative.Scenario)
+                t.end()
+            }
+        })
+        .catch(err => {
+            console.log('oh no', err)
             t.end()
         })
 })
 
 test('save a blob', t => {
     console.log('file.name', file.name)
-    const { fs } = wn
     console.log('wn', wn)
+    const { fs } = wn
     var aaa = fs.write(fs.appPath(wn.path.file(file.name)), file)
     console.log('aaa', aaa)
     t.end()
