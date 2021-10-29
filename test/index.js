@@ -38,7 +38,7 @@ test('setup', t => {
 
     webnative.initialise({ permissions: PERMISSIONS })
         .then(_wn => {
-            console.log('_wnn', _wn)
+            console.log('______wnn', _wn)
             wn = _wn
             t.end()
         })
