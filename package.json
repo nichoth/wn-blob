@@ -13,7 +13,7 @@
     "start": "tsc -w",
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
-    "test": "browserify -d -p esmify test/index.js | tape-run --render=\"tap-spec\""
+    "test": "browserify -d -p esmify test/index.js | tape-run --browser=\"chrome\" --render=\"tap-spec\""
   },
   "dependencies": {
   },
