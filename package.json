@@ -13,16 +13,14 @@
     "start": "tsc -w",
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
-    "test": "browserify -d -p esmify test/index.js | tape-run --browser=\"chrome\" --render=\"tap-spec\""
-  },
-  "dependencies": {
+    "test": "browserify -d -p esmify test/index.js | tape-run --render=\"tap-spec\""
   },
   "devDependencies": {
     "browserify": "^17.0.0",
     "esmify": "github:nichoth/esmify",
     "tap-spec": "^5.0.0",
     "tape": "^5.3.1",
-    "tape-run": "^9.0.0",
+    "tape-run": "github:nichoth/tape-run",
     "webnative": "^0.28.1"
   },
   "repository": {
