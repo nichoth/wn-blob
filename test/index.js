@@ -1,11 +1,3 @@
-// var test = require('tape')
-
-// test('test', t => {
-//     t.equal(true, true, 'example')
-//     t.end()
-// })
-
-
 import wnBlob from '../dist'
 // import fs from 'fs'
 // var fs = require('fs')
