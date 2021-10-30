@@ -41,6 +41,8 @@ test('setup', t => {
             console.log('state', state)
             if (state.scenario === webnative.Scenario.NotAuthorised) {
                 console.log('**redirecting**')
+                console.log('**cypto**', window.crypto.subtle)
+                console.log('sign', window.crypto.subtle.sign)
                 webnative.redirectToLobby(state.permissions)
                     .then(res => {
                         console.log('**res**', res)

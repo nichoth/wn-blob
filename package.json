@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/nichoth/wn-blob/issues"
   },
-  "homepage": "https://github.com/nichoth/wn-blob#readme"
+  "homepage": "https://github.com/nichoth/wn-blob#readme",
+  "dependencies": {
+    "one-webcrypto": "github:nichoth/one-webcrypto"
+  }
 }
