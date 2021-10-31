@@ -64,5 +64,44 @@ validatePermissions looks for a '*' label of UCAN
 * need to set a username under USERNAME_STORAGE_KEY = "webnative.auth_username"
 * need to set a UCAN in the dictionary under '*'
 
+-----------------------------------------------------------
+
+* need to do something for `crypto.keystore.keyExists(keyName)`
 
 
+`const validUcans = ucan.validatePermissions(permissions, authedUsername)`
+
+[validatePermissions](https://github.com/fission-suite/webnative/blob/924db533a842ab80c8f4e59bf1af4c6296d0ee7c/src/ucan/internal.ts#L31)
+
+```js
+const rootUcan = dictionary.lookup("*")
+if (rootUcan && !token.isExpired(token.decode(rootUcan))) return true
+```
+`if (rootUcan && !token.isExpired(token.decode(rootUcan))) return true`
+
+----------------------------------------------
+
+var ks = keystore.get()
+
+need to set a key under `keyName`
+
+```js
+const keyName = await identifiers.readKey({ path })
+return await crypto.keystore.keyExists(keyName)
+```
+
+There is a `keyName` per path
+
+```js
+var ks = await keystore.get()
+```
+
+how does the `keyName` get set?
+
+see [storage.setItem](https://github.com/fission-suite/webnative/blob/924db533a842ab80c8f4e59bf1af4c6296d0ee7c/src/storage/index.ts#L7)
+
+
+* need to set a username under USERNAME_STORAGE_KEY = "webnative.auth_username"
+* need to set a UCAN in the dictionary under '*'
+* need to do something for `crypto.keystore.keyExists(keyName)`
+  - call `storage.setItem()`?
