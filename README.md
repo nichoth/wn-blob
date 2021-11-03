@@ -101,7 +101,12 @@ how does the `keyName` get set?
 see [storage.setItem](https://github.com/fission-suite/webnative/blob/924db533a842ab80c8f4e59bf1af4c6296d0ee7c/src/storage/index.ts#L7)
 
 
+
+
+
 * need to set a username under USERNAME_STORAGE_KEY = "webnative.auth_username"
 * need to set a UCAN in the dictionary under '*'
 * need to do something for `crypto.keystore.keyExists(keyName)`
   - call `storage.setItem()`?
+
+

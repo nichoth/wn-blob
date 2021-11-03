@@ -2,6 +2,10 @@ import wnBlob from '../dist'
 // import fs from 'fs'
 // var fs = require('fs')
 import * as webnative from 'webnative/lib'
+// var localForage = require("localforage");
+import * as localForage from "localforage";
+
+
 var test = require('tape')
 
 const PERMISSIONS = {
@@ -27,6 +31,16 @@ test('setup', t => {
     })
 
     file = new File([blob], "ok.jpg", { type: 'image/jpeg' });
+
+
+
+    await localforage.setItem("ucan", ucan)
+        .then(() => {
+
+        })
+
+
+
 
     webnative.initialise({ permissions: PERMISSIONS })
         .then(state => {
