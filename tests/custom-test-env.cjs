@@ -1,4 +1,4 @@
-const Environment = require('jest-environment-jsdom');
+const Environment = require('jest-environment-puppeteer');
 var u = require('util')
 
 /**
