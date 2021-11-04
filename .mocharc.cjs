@@ -1,10 +1,12 @@
 module.exports = {
     extension: ["ts"],
     spec: [
-        // "test/**/*.test.ts",
-        "test/*.spec.ts"
+        "tests/**/*.test.ts",
+        "tests/*.test.ts",
+        "src/**/*.test.ts",
+        "src/*.test.ts",
     ],
-    require: ["ts-node/register", "test/mocha-hook.ts"],
+    require: ["ts-node/register", "tests/mocha-hook.ts"],
     timeout: 120000,
     loader: "ts-node/esm",
 }
