@@ -13,10 +13,11 @@
     "start": "tsc -w",
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
-    "test": "browserify -d -p esmify test/index.js | tape-run --render=\"tap-spec\""
+    "test": "env $(cat .env | grep -v \"#\" | xargs) browserify -d -p esmify -t envify test/index.js | tape-run | tap-spec"
   },
   "devDependencies": {
     "browserify": "^17.0.0",
+    "envify": "^4.1.0",
     "esmify": "github:nichoth/esmify",
     "localforage": "^1.10.0",
     "tap-spec": "^5.0.0",

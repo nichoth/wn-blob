@@ -2,10 +2,7 @@ import wnBlob from '../dist'
 // import fs from 'fs'
 // var fs = require('fs')
 import * as webnative from 'webnative/lib'
-// var localForage = require("localforage");
-import * as localForage from "localforage";
-
-
+import * as localforage from "localforage";
 var test = require('tape')
 
 const PERMISSIONS = {
@@ -14,13 +11,16 @@ const PERMISSIONS = {
         creator: "nichoth",
     },
     fs: {
-        public: [ webnative.path.directory("test") ],
+        public: [ webnative.path.directory('test') ],
     }
 };
 
 var wn
 var file
 test('setup', t => {
+    console.log('process.env.ucan', !!process.env.UCAN)
+    // console.log('path directory', webnative.path.directory('test'))
+
     // console.log('fs', fs)
     // this is a node buffer
     // var buf = fs.readFileSync(__dirname + '/caracal.jpg')
@@ -32,42 +32,40 @@ test('setup', t => {
 
     file = new File([blob], "ok.jpg", { type: 'image/jpeg' });
 
+    var ucan = JSON.parse(process.env.UCAN)
 
-
-    await localforage.setItem("ucan", ucan)
+    localforage.setItem("ucan", ucan)
         .then(() => {
-
+            console.log('set ucan', !!ucan)
         })
+        .then(() => init())
+        .then(() => t.end())
+        .catch(() => t.end())
 
 
 
-
-    webnative.initialise({ permissions: PERMISSIONS })
-        .then(state => {
-            console.log('state', state)
-            if (state.scenario === webnative.Scenario.NotAuthorised) {
-                console.log('**redirecting**')
-                console.log('**cypto**', window.crypto.subtle)
-                console.log('sign', window.crypto.subtle.sign)
-                webnative.redirectToLobby(state.permissions)
-                    .then(res => {
-                        console.log('**res**', res)
-                        t.end()
-                    })
-                    .catch(err => {
-                        console.log('**err**', err)
-                        t.end()
-                    })
-            } else {
-                console.log('**else**', webnative.Scenario)
-                t.end()
-            }
-        })
-        .catch(err => {
-            console.log('oh no', err)
-            t.end()
-        })
+    function init () {
+        return webnative.initialise({ permissions: PERMISSIONS })
+            .then(state => {
+                console.log('state', state)
+                if (state.scenario === webnative.Scenario.NotAuthorised) {
+                    console.log('**redirecting**')
+                    console.log('**cypto**', window.crypto.subtle)
+                    console.log('sign', window.crypto.subtle.sign)
+                    return webnative.redirectToLobby(state.permissions)
+                        .then(res => {
+                            console.log('**res**', res)
+                        })
+                        .catch(err => {
+                            console.log('**err**', err)
+                        })
+                } else {
+                    console.log('**else**', webnative.Scenario)
+                }
+            })
+    }
 })
+
 
 test('save a blob', t => {
     console.log('file.name', file.name)
