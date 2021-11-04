@@ -42,6 +42,7 @@
   },
   "homepage": "https://github.com/nichoth/wn-blob#readme",
   "dependencies": {
-    "one-webcrypto": "github:nichoth/one-webcrypto"
+    "one-webcrypto": "github:nichoth/one-webcrypto",
+    "peer-id": "^0.15.3"
   }
 }
