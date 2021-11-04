@@ -29,8 +29,7 @@
     "tap-spec": "^5.0.0",
     "tape": "^5.3.1",
     "tape-run": "github:nichoth/tape-run",
-    "tsify": "^5.0.4",
-    "webnative": "^0.28.1"
+    "webnative": "^0.29.1"
   },
   "repository": {
     "type": "git",
