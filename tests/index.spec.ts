@@ -1,4 +1,6 @@
 // const puppeteer = require('puppeteer');
+// import { Blob } from 'blob-polyfill';
+// import {Blob} from 'node:buffer';
 import expect from "expect"
 import wnBlob from '../src'
 // import fs from 'fs'
