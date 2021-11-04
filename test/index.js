@@ -1,9 +1,13 @@
-import wnBlob from '../dist'
+// import wnBlob from '../dist'
 // import fs from 'fs'
 // var fs = require('fs')
 import * as webnative from 'webnative/lib'
-import * as localforage from "localforage";
+// import * as localforage from "localforage";
 var test = require('tape')
+import { createInMemoryIPFS } from "./helpers/in-memory-ipfs"
+import * as ipfsConfig from "webnative/lib/ipfs/config.js"
+
+var ipfs = await createInMemoryIPFS()
 
 const PERMISSIONS = {
     app: {
@@ -18,7 +22,7 @@ const PERMISSIONS = {
 var wn
 var file
 test('setup', t => {
-    console.log('process.env.ucan', !!process.env.UCAN)
+    // console.log('process.env.ucan', !!process.env.UCAN)
     // console.log('path directory', webnative.path.directory('test'))
 
     // console.log('fs', fs)
@@ -32,17 +36,18 @@ test('setup', t => {
 
     file = new File([blob], "ok.jpg", { type: 'image/jpeg' });
 
-    var ucan = JSON.parse(process.env.UCAN)
+    // var ucan = JSON.parse(process.env.UCAN)
 
-    localforage.setItem("ucan", ucan)
-        .then(() => {
-            console.log('set ucan', !!ucan)
-        })
-        .then(() => init())
-        .then(() => t.end())
-        .catch(() => t.end())
+    // localforage.setItem("ucan", ucan)
+    //     .then(() => {
+    //         console.log('set ucan', !!ucan)
+    //     })
+    //     .then(() => init())
+    //     .then(() => t.end())
+    //     .catch(() => t.end())
 
 
+    init()
 
     function init () {
         return webnative.initialise({ permissions: PERMISSIONS })

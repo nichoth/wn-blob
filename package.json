@@ -16,13 +16,22 @@
     "test": "env $(cat .env | grep -v \"#\" | xargs) browserify -d -p esmify -t envify test/index.js | tape-run | tap-spec"
   },
   "devDependencies": {
+    "@ipld/dag-pb": "^2.1.13",
+    "blockstore-core": "^1.0.2",
     "browserify": "^17.0.0",
+    "datastore-core": "^6.0.7",
     "envify": "^4.1.0",
     "esmify": "github:nichoth/esmify",
+    "ipfs-core": "^0.11.1",
+    "ipfs-repo": "^13.0.5",
+    "ipfs-utils": "^9.0.2",
     "localforage": "^1.10.0",
+    "stream": "^0.0.2",
+    "streams": "^0.0.5",
     "tap-spec": "^5.0.0",
     "tape": "^5.3.1",
     "tape-run": "github:nichoth/tape-run",
+    "tsify": "^5.0.4",
     "webnative": "^0.28.1"
   },
   "repository": {
