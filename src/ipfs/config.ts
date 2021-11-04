@@ -1,4 +1,4 @@
-import IPFSClient from "ipfs-message-port-client"
+import { IPFSClient } from "ipfs-message-port-client"
 import type { IPFS } from "ipfs-core"
 
 import { setup } from "../setup/internal.js"
