@@ -9,6 +9,7 @@ var test = require('tape')
 test('example', t => {
     t.equal(2, 2, 'should be an example')
     t.end()
+    console.log('webnative', window.webnative)
 })
 
 
