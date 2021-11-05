@@ -13,7 +13,8 @@
     "start": "tsc -w",
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
-    "test": "env $(cat .env | grep -v \"#\" | xargs) browserify -d -p esmify -t envify test/index.js | tape-run | tap-spec"
+    "test": "env $(cat .env | grep -v \"#\" | xargs) browserify -d -p esmify -t envify test/index.js | tape-run | tap-spec",
+    "test-stack": "env $(cat .env | grep -v \"#\" | xargs) browserify -d -p esmify -t envify test/index.js | smokestack | tap-spec"
   },
   "devDependencies": {
     "@ipld/dag-pb": "^2.1.13",
@@ -26,6 +27,7 @@
     "ipfs-repo": "^13.0.5",
     "ipfs-utils": "^9.0.2",
     "localforage": "^1.10.0",
+    "smokestack": "^3.6.0",
     "tap-spec": "^5.0.0",
     "tape": "^5.3.1",
     "tape-run": "github:nichoth/tape-run",
@@ -42,6 +44,7 @@
   },
   "homepage": "https://github.com/nichoth/wn-blob#readme",
   "dependencies": {
+    "fetch-blob": "^3.1.3",
     "one-webcrypto": "github:nichoth/one-webcrypto",
     "peer-id": "^0.15.3"
   }
