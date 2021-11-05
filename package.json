@@ -13,7 +13,14 @@
     "start": "tsc -w",
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
-    "test": "env $(cat .env | grep -v \"#\" | xargs) browserify -d -p esmify -t envify test/index.js | tape-run | tap-spec"
+    "test": "npm run build-test && cat test/index.html | tape-run --input html --static test",
+    "build-test": "browserify -d -p esmify test/index.js > test/test-bundle.js"
+  },
+  "testling": {
+    "browsers": [
+      "chrome/latest"
+    ],
+    "files": "test/*.js"
   },
   "devDependencies": {
     "@ipld/dag-pb": "^2.1.13",
@@ -29,6 +36,7 @@
     "tap-spec": "^5.0.0",
     "tape": "^5.3.1",
     "tape-run": "github:nichoth/tape-run",
+    "testling": "^1.7.3",
     "webnative": "^0.29.1"
   },
   "repository": {
