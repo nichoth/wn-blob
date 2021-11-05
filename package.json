@@ -15,6 +15,9 @@
     "build": "tsc",
     "test": "env $(cat .env | grep -v \"#\" | xargs) browserify -d -p esmify -t envify test/index.js | testling"
   },
+  "testling": {
+    "browsers": [ "chrome/latest" ]
+  },
   "devDependencies": {
     "@ipld/dag-pb": "^2.1.13",
     "blockstore-core": "^1.0.2",
