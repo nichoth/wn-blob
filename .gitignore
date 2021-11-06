@@ -95,3 +95,4 @@ node_modules
 bundle.js
 .env
 test/test-bundle.js
+test/test-bundle.js
