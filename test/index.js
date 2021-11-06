@@ -5,6 +5,7 @@
 // import * as localforage from "localforage";
 var test = require('tape')
 
+var wn = window.webnative
 
 test('example', t => {
     t.equal(2, 2, 'should be an example')
@@ -26,18 +27,18 @@ test('setup', t => {
             creator: "nichoth",
         },
         fs: {
-            public: [ webnative.path.directory('test') ],
+            public: [ wn.path.directory('test') ],
         }
     };
 
-    webnative.initialise({ permissions: PERMISSIONS })
+    wn.initialise({ permissions: PERMISSIONS })
         .then(state => {
             console.log('**state**', state)
-            if (state.scenario === webnative.Scenario.NotAuthorised) {
+            if (state.scenario === wn.Scenario.NotAuthorised) {
                 console.log('**redirecting**')
                 console.log('**cypto**', window.crypto.subtle)
                 // console.log('sign', window.crypto.subtle.sign)
-                return webnative.redirectToLobby(state.permissions)
+                return wn.redirectToLobby(state.permissions)
                     .then(res => {
                         console.log('**res**', res)
                     })
@@ -45,7 +46,7 @@ test('setup', t => {
                         console.log('**err**', err)
                     })
             } else {
-                console.log('**else**', webnative.Scenario)
+                console.log('**else**', wn.Scenario)
             }
         })
 
