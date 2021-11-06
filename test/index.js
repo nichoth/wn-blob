@@ -12,6 +12,44 @@ test('example', t => {
     console.log('webnative', window.webnative)
 })
 
+var file
+test('setup', t => {
+    const blob = new Blob(['ok'], {
+        type: 'image/jpeg',
+    })
+
+    file = new File([blob], "ok.jpg", { type: 'image/jpeg' });
+
+    const PERMISSIONS = {
+        app: {
+            name: "test",
+            creator: "nichoth",
+        },
+        fs: {
+            public: [ webnative.path.directory('test') ],
+        }
+    };
+
+    webnative.initialise({ permissions: PERMISSIONS })
+        .then(state => {
+            console.log('**state**', state)
+            if (state.scenario === webnative.Scenario.NotAuthorised) {
+                console.log('**redirecting**')
+                console.log('**cypto**', window.crypto.subtle)
+                // console.log('sign', window.crypto.subtle.sign)
+                return webnative.redirectToLobby(state.permissions)
+                    .then(res => {
+                        console.log('**res**', res)
+                    })
+                    .catch(err => {
+                        console.log('**err**', err)
+                    })
+            } else {
+                console.log('**else**', webnative.Scenario)
+            }
+        })
+
+})
 
 
 // import { createInMemoryIPFS } from "./helpers/in-memory-ipfs"
