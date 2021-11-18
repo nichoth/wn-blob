@@ -13,7 +13,7 @@
     "start": "tsc -w",
     "prebuild": "rm -rf dist/*",
     "build": "tsc",
-    "test": "npm run build-test && cat test/index.html | tape-run --input html --static test",
+    "test": "npm run build-test && cat test/index.html | tape-run --input html --static test | tap-spec",
     "build-test": "browserify -d -p esmify test/index.js > test/test-bundle.js"
   },
   "testling": {

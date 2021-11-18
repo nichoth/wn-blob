@@ -47,7 +47,7 @@ const validUcans = ucan.validatePermissions(permissions, authedUsername)
 https://github.com/fission-suite/webnative/blob/924db533a842ab80c8f4e59bf1af4c6296d0ee7c/src/ucan/internal.ts#L31
 
 
-const rootUcan = dictionary.lookup("*")
+const rootUcan = dictionary.lookup(`*`)
 
 it's an in-memory dictionary
 
@@ -55,14 +55,14 @@ it's an in-memory dictionary
 
 => store.getDictionary(label)
 
-validatePermissions looks for a '*' label of UCAN
+validatePermissions looks for a `*` label of UCAN
 
 -----------------------------------------------------------
 
 [authenticatedUsername](https://github.com/fission-suite/webnative/blob/924db533a842ab80c8f4e59bf1af4c6296d0ee7c/src/common/index.ts#L21)
 
 * need to set a username under USERNAME_STORAGE_KEY = "webnative.auth_username"
-* need to set a UCAN in the dictionary under '*'
+* need to set a UCAN in the dictionary under `*`
 
 -----------------------------------------------------------
 
@@ -105,7 +105,7 @@ see [storage.setItem](https://github.com/fission-suite/webnative/blob/924db533a8
 
 
 * need to set a username under USERNAME_STORAGE_KEY = "webnative.auth_username"
-* need to set a UCAN in the dictionary under '*'
+* need to set a UCAN in the dictionary under `*`
 * need to do something for `crypto.keystore.keyExists(keyName)`
   - call `storage.setItem()`?
 
