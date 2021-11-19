@@ -7,10 +7,14 @@ var test = require('tape')
 
 var wn = window.webnative
 
-test('example', t => {
+test('example', async t => {
     t.equal(2, 2, 'should be an example')
+    console.log('webnative.apps', window.webnative.apps)
+    // console.log('index', await webnative.apps.index())
+
+    console.log('create', await wn.apps.create('foooo'))
+
     t.end()
-    console.log('webnative', window.webnative)
 })
 
 var file
@@ -34,13 +38,15 @@ test('setup', t => {
     wn.initialise({ permissions: PERMISSIONS })
         .then(state => {
             console.log('**state**', state)
+
             if (state.scenario === wn.Scenario.NotAuthorised) {
                 console.log('**redirecting**')
                 console.log('**cypto**', window.crypto.subtle)
                 // console.log('sign', window.crypto.subtle.sign)
                 return wn.redirectToLobby(state.permissions)
                     .then(res => {
-                        console.log('**res**', res)
+                        console.log('**redirect**', res)
+                        t.end()
                     })
                     .catch(err => {
                         console.log('**err**', err)
@@ -48,6 +54,11 @@ test('setup', t => {
             } else {
                 console.log('**else**', wn.Scenario)
             }
+
+            t.end()
+        })
+        .catch(err => {
+            t.end()
         })
 
 })
