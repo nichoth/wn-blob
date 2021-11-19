@@ -10,9 +10,10 @@ var wn = window.webnative
 test('example', async t => {
     t.equal(2, 2, 'should be an example')
     console.log('webnative.apps', window.webnative.apps)
-    // console.log('index', await webnative.apps.index())
 
-    console.log('create', await wn.apps.create('foooo'))
+    console.log('index', await webnative.apps.index())
+
+    // console.log('create', await wn.apps.create('foooo'))
 
     t.end()
 })
